@@ -36,7 +36,8 @@ app.use(errorHandler);
 // (req, res ) =>{
 //     res.send("<h1>Hello I am from you backend about page</h1>")
 // })
+const PORT = process.env.PORT || 8000
 
-app.listen(8000, () => {
-  console.log("the port is listening on port 8080");
+app.listen(PORT, () => {
+  console.log("the port is listening on port " + PORT);
 });
