@@ -201,7 +201,8 @@ exports.forgetPassword = async (req, res) => {
   await newPasswordToken.save();
 
   //https://app.ratingmovie.com/
-  const resetPasswordUrl = `https://app.ratingmovie.com/auth/reset-password?token=${token}&id=${user._id}`;
+  //https://fivestarback-rdyov.ondigitalocean.app/
+  const resetPasswordUrl = `https://fivestarback-rdyov.ondigitalocean.app/auth/reset-password?token=${token}&id=${user._id}`;
 
   //send OTP to our user by mailtrap
   // var transport = generateMailTransporter();
