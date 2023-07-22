@@ -202,6 +202,7 @@ exports.forgetPassword = async (req, res) => {
 
   //https://app.ratingmovie.com/
   //https://fivestarback-rdyov.ondigitalocean.app/
+  //https://fivestarback-rdyov.ondigitalocean.app/
   const resetPasswordUrl = `https://fivestarback-rdyov.ondigitalocean.app/auth/reset-password?token=${token}&id=${user._id}`;
 
   //send OTP to our user by mailtrap
