@@ -200,10 +200,9 @@ exports.forgetPassword = async (req, res) => {
   const newPasswordToken = await PasswordResetToken({ owner: user._id, token });
   await newPasswordToken.save();
 
-  //https://app.ratingmovie.com/
-  //https://fivestarback-rdyov.ondigitalocean.app/
-  //https://fivestarback-rdyov.ondigitalocean.app/
-  const resetPasswordUrl = `https://fivestarback-rdyov.ondigitalocean.app/auth/reset-password?token=${token}&id=${user._id}`;
+
+  //https://fivestarfront-iqha8.ondigitalocean.app/
+  const resetPasswordUrl = `https://fivestarfront-iqha8.ondigitalocean.app/auth/reset-password?token=${token}&id=${user._id}`;
 
   //send OTP to our user by mailtrap
   // var transport = generateMailTransporter();
