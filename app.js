@@ -8,7 +8,8 @@ const adminRouter = require("./routes/admin");
 const { errorHandler } = require("./middlewares/error");
 const cors = require("cors");
 const { handleNotFound } = require("./utils/helper");
-const path = require('path')
+const path = require('path');
+const { connectDB } = require("./db");
 
 require("dotenv").config();
 require("./db");
@@ -41,13 +42,13 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 8000
 
-// app.listen(PORT, () => {
-//   console.log("the port is listening on port " + PORT);
-// });
-
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log("Backend server running on port: " + PORT);
-  });
+app.listen(PORT, () => {
+  console.log("the port is listening on port " + PORT);
 });
+
+// connectDB().then(() => {
+//   app.listen(PORT, () => {
+//     console.log("Backend server running on port: " + PORT);
+//   });
+// });
 
