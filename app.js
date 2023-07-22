@@ -8,11 +8,13 @@ const adminRouter = require("./routes/admin");
 const { errorHandler } = require("./middlewares/error");
 const cors = require("cors");
 const { handleNotFound } = require("./utils/helper");
+const path = require('path')
 
 require("dotenv").config();
 require("./db");
 
 const app = express();
+// app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors());
 // mount the data request read by the request from user
 app.use(express.json());
@@ -39,6 +41,13 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 8000
 
-app.listen(PORT, () => {
-  console.log("the port is listening on port " + PORT);
+// app.listen(PORT, () => {
+//   console.log("the port is listening on port " + PORT);
+// });
+
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log("Backend server running on port: " + PORT);
+  });
 });
+
